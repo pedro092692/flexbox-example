@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="flexbox.css">
+    <title>Flexbox</title>
+    <script type="text/javascript">
+        function display(){
+            var div = document.getElementById("contenedor");
+            var flex = document.getElementById("flex");
+            if(flex.value==2){
+                contenedor.style.display="flex";
+            }
+            if(flex.value==0){
+                div.style.display="block";
+                
+            }
+            div.style.maxWidth="960px";
+            div.style.height="auto";
+        }
+        
+        function direccion(){
+            var div = document.getElementById("contenedor");
+            var direc = document.getElementById("direc");
+            var valor ="";
+            if(direc.value==0){
+                valor = "row"; 
+            }
+            if(direc.value==1){
+                valor = "row-reverse"; 
+            }
+            if(direc.value==2){
+                valor = "column"; 
+            }
+            if(direc.value==3){
+                valor = "column-reverse"; 
+            }
+            div.style.flexDirection=valor;
+            div.style.maxWidth="960px";
+            div.style.height="auto";
+        }
+        
+        function wrap(){
+            var div = document.getElementById("contenedor");
+            var direc = document.getElementById("wrap");
+            var valor ="";
+            if(direc.value==0){
+                valor = "nowrap";
+                
+            }
+            if(direc.value==1){
+                valor = "wrap"; 
+            }
+            if(direc.value==2){
+                valor = "wrap-reverse"; 
+            }
+            
+            div.style.flexWrap=valor;
+            div.style.maxWidth="600px";
+            div.style.height="auto";
+        }
+        
+        function jus(){
+            var div = document.getElementById("contenedor");
+            var direc = document.getElementById("jus");
+            var valor ="";
+            if(direc.value==0){
+                valor ="flex-start";
+                
+            }
+            if(direc.value==1){
+                valor = "flex-end"; 
+            }
+            if(direc.value==2){
+                valor = "center"; 
+            }
+            
+            if(direc.value==3){
+                valor = "space-between"; 
+            }
+            
+            if(direc.value==4){
+                valor = "space-around"; 
+            }
+            
+            div.style.justifyContent=valor;
+            div.style.maxWidth="960px";
+            div.style.height="500px";
+        }
+        
+        function ver(){
+            var div = document.getElementById("contenedor");
+            var direc = document.getElementById("ver");
+            var valor ="";
+            var x = document.getElementById("dos");
+            if(direc.value==0){
+                valor ="flex-start";
+                
+            }
+            if(direc.value==1){
+                valor = "flex-end"; 
+            }
+            if(direc.value==2){
+                valor = "center"; 
+            }
+            
+            if(direc.value==3){
+                valor = "stretch";
+                x.style.height="auto";
+            }
+            
+            if(direc.value==4){
+                valor = "baseline"; 
+            }
+            div.style.alignContent="";
+            div.style.alignItems=valor;
+            div.style.maxWidth="960px";
+            div.style.height="500px";
+            
+            
+            
+        }
+        
+        function con(){
+            var div = document.getElementById("contenedor");
+            var direc = document.getElementById("con");
+            var valor ="";
+            var x = document.getElementById("dos");
+            
+            if(direc.value==0){
+                valor ="flex-start";
+                
+            }
+            if(direc.value==1){
+                valor = "flex-end"; 
+            }
+            if(direc.value==2){
+                valor = "center"; 
+            }
+            
+            if(direc.value==3){
+                valor = "stretch";
+                
+            }
+            
+            if(direc.value==4){
+                valor = "space-between"; 
+            }
+            
+            if(direc.value==5){
+                valor = "space-around"; 
+            }
+            
+            
+            div.style.alignContent=valor;
+            div.style.maxWidth="540px";
+            div.style.height="500px";
+        }
+           
+            function order(){
+            var div = document.getElementById("dos");
+            var div2 = document.getElementById("caja");
+            var direc = document.getElementById("orden");
+            var valor ="2";
+            if(direc.value==0){
+                valor = "0";
+                div.style.order="1";
+                div2.style.order="1";
+            }
+            if(direc.value==1){
+                valor = "1"; 
+                div2.style.order="2";
+                div.style.order="1";
+            }
+            
+            
+            
+            
+        }
+        
+         function grow(){
+            var div = document.getElementById("caja");
+            var divp = document.getElementById("contenedor");
+             var direc = document.getElementById("grow");
+            var valor ="0";
+            if(direc.value==0){
+                
+                div.style.flexGrow="0";
+                
+            }
+            if(direc.value==1){
+                div.style.flexGrow="1";
+                
+            }
+            divp.style.maxWidth="600px";
+            
+            
+            
+        }
+        
+    </script>
+</head>
+<body>
+  <div class="dinamico">
+     <p>Propiedades De Flexbox Para El Padre:</p><br>
+     <p>Display</p>
+      <select name="flex" id="flex" onclick="display();">
+         <option value="0">display:block;</option>
+         <option value="2">display:flex;</option>
+      </select>
+      
+      <p>Flex-Dirction</p>
+      <select name="direc" id="direc" onclick="direccion();">
+         <option value="0">flex-dirction:row;</option>
+         <option value="1">flex-dirction:row-reverse;</option>
+         <option value="2">flex-dirction:column;</option>
+         <option value="3">flex-dirction:row-column-reverse</option>
+      </select>
+      
+      <p>Flex-Wrap</p>
+      <select name="direc" id="wrap" onclick="wrap();">
+         <option value="0">flex-wrap:no-wrap;</option>
+         <option value="1">flex-wrap:wrap;</option>
+         <option value="2">flex-wrap:wrap-reverse;</option>
+         
+      </select>
+      
+      <p>justify-content</p>
+      <select name="direc" id="jus" onclick="jus();">
+         <option value="0">justify-content:flex-start;</option>
+         <option value="1">justify-content:flex-end;</option>
+         <option value="2">justify-content:center;</option>
+         <option value="3">justify-content:space-between;</option>
+         <option value="4">justify-content:space-around;</option>
+         
+      </select>
+      
+      <p>align-items</p>
+      <select name="direc" id="ver" onclick="ver();">
+         <option value="0">align-items:flex-start;</option>
+         <option value="1">align-items:flex-end;</option>
+         <option value="2">align-items:center;</option>
+         <option value="3">align-items:strech;</option>
+         <option value="4">align-items:baseline;</option>
+      </select>
+      
+      <p>align-cotent</p>
+      <select name="direc" id="con" onclick="con();">
+         <option value="0">cotent-items:flex-start;</option>
+         <option value="1">cotent-items:flex-end;</option>
+         <option value="2">cotent-items:center;</option>
+         <option value="4">cotent-items:space-between;</option>
+         <option value="5">cotent-items:space-around;</option>
+      </select>
+   </div>
+   
+   <div class="hijo">
+        <p>Propiedades Hijo:</p>
+        <p>Order</p>
+        <select name="direc" id="orden" onclick="order();">
+         <option value="0">order:0;</option>
+         <option value="1">order:2;</option>
+         
+      </select>
+      
+      <p>flex-grow</p>
+        <select name="direc" id="grow" onclick="grow();">
+         <option value="0">order:0;</option>
+         <option value="1">order:1;</option>
+         
+      </select>
+    </div>
+    
+    <div class="contenedor" id="contenedor">
+        <div class="caja" id="caja">1</div>
+        <div class="caja dos"id="dos">2</div>
+        <div class="caja" id="caja">3</div>
+        <div class="caja" id="caja">4</div>
+        <div class="caja" id="caja">5</div>
+        <div class="caja" id="caja">6</div>
+        
+    </div>
+    
+</body>
+</html>

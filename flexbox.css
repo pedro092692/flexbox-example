@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+body{
+   background: #f2f2f2;
+   font-family: Arial;
+}
+
+.dinamico{
+    background: #0B2F3A;
+    width: 100%;
+    font-size: 20px;
+    height: 150px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.hijo{
+    background: #0B2F3A;
+    width: 100%;
+    font-size: 20px;
+    height: 150px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    order: 1;
+}
+
+.contenedor{
+    width: 80%;
+    max-width:960px;
+    
+    background: #212d40;
+    /*display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;*/
+    
+}
+
+.caja{
+    width: 100px;
+    height: 100px;
+    background: #f79256;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    font-size: 40px;
+    color: #fff;
+    
+}
